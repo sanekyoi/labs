@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница не найдена | Учебное заведение</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path fill="rgba(255,255,255,0.05)" d="M20,20 L80,20 L80,80 L20,80 Z M30,30 L70,30 L70,70 L30,70 Z M40,40 L60,40 L60,60 L40,60 Z"/></svg>');
+            background-size: 200px;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 800px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .error-code {
+            font-size: 120px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+            color: #ffcc00;
+        }
+        
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #e0e0e0;
+        }
+        
+        .helpful-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .helpful-links a {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #ffcc00;
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .helpful-links a:hover {
+            background-color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .search-box {
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .search-box input {
+            padding: 12px 20px;
+            width: 70%;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            font-size: 16px;
+            outline: none;
+        }
+        
+        .search-box button {
+            padding: 12px 25px;
+            background-color: #ffcc00;
+            border: none;
+            border-radius: 0 50px 50px 0;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .search-box button:hover {
+            background-color: #ffdd44;
+        }
+        
+        .contact-info {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .decoration {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .decoration:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            background: radial-gradient(circle, #ffcc00, transparent);
+        }
+        
+        .decoration:nth-child(2) {
+            bottom: 15%;
+            right: 15%;
+            background: radial-gradient(circle, #1a2a6c, transparent);
+        }
+        
+        .decoration:nth-child(3) {
+            top: 20%;
+            right: 20%;
+            background: radial-gradient(circle, #b21f1f, transparent);
+        }
+        
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 80px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .container {
+                padding: 30px 20px;
+            }
+            
+            .helpful-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .helpful-links a {
+                width: 80%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="decoration"></div>
+    <div class="decoration"></div>
+    <div class="decoration"></div>
+    
+    <div class="container">
+        <div class="error-code">404</div>
+        <h1>Страница не найдена</h1>
+        <p>К сожалению, запрашиваемая вами страница не существует или была перемещена.</p>
+        <p>Возможно, вы ввели неправильный адрес или перешли по устаревшей ссылке.</p>
+        
+        <div class="search-box">
+            <input type="text" placeholder="Поиск по сайту...">
+            <button>Найти</button>
+        </div>
+        
+        <div class="helpful-links">
+            <a href="/">Главная страница</a>
+            <a href="/about">Об учебном заведении</a>
+            <a href="/contacts">Контакты</a>
+            <a href="/schedule">Расписание</a>
+            <a href="/library">Электронная библиотека</a>
+        </div>
+        
+        <div class="contact-info">
+            <p>Если вы считаете, что это ошибка, свяжитесь с нами:</p>
+            <p>Телефон: +7 (XXX) XXX-XX-XX</p>
+            <p>Email: info@university.edu</p>
+            <p>Адрес: г. Город, ул. Учебная, д. 1</p>
+        </div>
+    </div>
+    
+    <script>
+        // Простая функция для поиска (в реальном проекте будет перенаправлять на страницу поиска)
+        document.querySelector('.search-box button').addEventListener('click', function() {
+            const searchTerm = document.querySelector('.search-box input').value;
+            if (searchTerm.trim() !== '') {
+                alert('Поиск: ' + searchTerm + '\n\nВ реальном проекте здесь будет перенаправление на страницу с результатами поиска.');
+            }
+        });
+        
+        // Добавляем обработчик нажатия Enter в поле поиска
+        document.querySelector('.search-box input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.querySelector('.search-box button').click();
+            }
+        });
+    </script>
+</body>
+</html>

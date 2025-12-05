@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дорожные знаки</title>
+    
+    <!-- Подключение библиотек jQuery -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+     
+    <style> 
+        .tooltip { 
+            position: relative; 
+        } 
+ 
+        .tooltip .ui-tooltip { 
+            position: absolute; 
+            background-color: #fff; 
+            border: 1px solid #ddd; 
+            padding: 5px; 
+            z-index: 1; 
+        } 
+    </style>
+</head>
+<body>
+    <div id="signs-container"></div>
+
+    <script>
+        $(function () {
+            const container = $('#signs-container');
+            const basePath = 'img/signs/';
+            
+            let currentParagraph = $('<p>');
+            let imgCount = 0;
+            
+            // Создаем изображения с номерами от 1_1 до 5_20
+            for (let group = 1; group <= 5; group++) {
+                for (let number = 1; number <= 20; number++) {
+                    const filename = `${group}_${number}.svg`;
+                    const imgPath = basePath + filename;
+                    
+                    // Создаем элемент изображения
+                    const img = $('<img>')
+                        .attr('src', imgPath)
+                        .attr('alt', `Дорожный знак ${group}.${number}`)
+                        .addClass('tooltip')
+                        .data('hint', `Дорожный знак ${group}.${number}`)
+                        .on('error', function() {
+                            // Удаляем изображение если файл не найден
+                            $(this).remove();
+                        });
+                    
+                    // Добавляем в текущий параграф
+                    currentParagraph.append(img);
+                    imgCount++;
+
+                }
+            }
+            
+            // Добавляем последний параграф если в нем есть изображения
+            if (currentParagraph.children().length > 0) {
+                container.append(currentParagraph);
+            }
+
+            // Инициализация tooltip
+            $(document).tooltip({ 
+                items: "img", 
+                content: function () { 
+                    var $element = $(this); 
+                    if ($element.is("img")) { 
+                        return $element.data('hint'); 
+                    } 
+                } 
+            }); 
+        }); 
+    </script> 
+</body>
+</html>
