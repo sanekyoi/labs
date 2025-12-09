@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кинозал — выбор мест</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- Шапка -->
+<header class="topbar">
+    <nav class="topbar-links">
+        <a>КИНОТЕАТРЫ</a>
+        <a>АКЦИИ</a>
+        <a>МУЛЬТИКАРТА</a>
+    </nav>
+    <div class="topbar-user">Личный кабинет</div>
+</header>
+
+<!-- Блок с фильмом -->
+<section class="movie-header">
+    <img src="data:image/jpeg;base64,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" 
+     class="movie-avatar">
+    <div class="movie-info-block">
+        <h1 class="movie-title">Один хороший день</h1>
+        <div class="movie-subinfo">
+            03 марта 2025 в 14:20 &nbsp; | &nbsp; Зал 6 &nbsp; | &nbsp; 2D
+        </div>
+    </div>
+</section>
+
+<!-- Экран -->
+<section class="screen-wrapper">
+        <div class="screen-container">
+             <img src="Images/screen.svg" alt="Экран кинотеатра" class="screen-image">
+                    
+        </div>
+</section>
+
+<!-- Зал -->
+<section class="hall-wrapper">
+
+    <div class="row-numbers left" id="row-left"></div>
+
+    <div class="seats-grid" id="seats"></div>
+
+    <div class="row-numbers right" id="row-right"></div>
+
+</section>
+
+<!-- Легенда -->
+<section class="legend">
+    <div><img src="Images/Usual_place.svg"><span>Место &nbsp; 440 ₽</span></div>
+    <div><img src="Images/comfort.svg"><span>Комфорт &nbsp; 490 ₽</span></div>
+    <div><img src="Images/Busy.svg"><span>Занято</span></div>
+    <div><img src="Images/Selected.svg"><span>Выбранное вами</span></div>
+</section>
+
+<hr class="divider">
+
+<!-- Нижняя панель -->
+<section class="actions">
+    <button class="btn-outline">ВЫКУПИТЬ ВЕСЬ ЗАЛ</button>
+    <button class="btn-primary">ПРОДОЛЖИТЬ</button>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const seats = document.getElementById("seats");
+    const left = document.getElementById("row-left");
+    const right = document.getElementById("row-right");
+
+    const rows = 8;
+    const cols = 14;
+
+    let occupied = [2, 5, 12, 15, 23, 34, 45, 56, 67, 78];
+    
+    // Комфорт-места с 4 по 8 ряды, без 2 мест с каждого края
+    let comfort = [];
+    for (let row = 4; row <= 8; row++) {
+        // Левая часть от прохода: колонки 3-6
+        for (let col = 3; col <= 7; col++) {
+            comfort.push((row - 1) * cols + col);
+        }
+        // Правая часть от прохода: колонки 9-12
+        for (let col = 8; col <= 12; col++) {
+            comfort.push((row - 1) * cols + col);
+        }
+    }
+    
+    let selected = [];
+
+    /* номера рядов */
+    for (let i = 1; i <= rows; i++) {
+        const l = document.createElement("div");
+        l.textContent = i;
+        left.appendChild(l);
+
+        const r = document.createElement("div");
+        r.textContent = i;
+        right.appendChild(r);
+    }
+
+    /* создаём места */
+    for (let r = 1; r <= rows; r++) {
+        for (let c = 1; c <= cols; c++) {
+            const index = (r - 1) * cols + c;
+
+            // Пропускаем места в центральном проходе (колонки 7 и 8)
+            // if (c === 7 || c === 8) {
+            //     const emptySpace = document.createElement("div");
+            //     emptySpace.className = "empty-space";
+            //     seats.appendChild(emptySpace);
+            //     continue;
+            // }
+
+            const seat = document.createElement("div");
+            seat.classList.add("seat");
+            seat.dataset.index = index;
+            seat.dataset.row = r;
+            seat.dataset.col = c;
+
+            const img = document.createElement("img");
+
+            if (occupied.includes(index)) {
+                img.src = "Images/Busy.svg";
+                seat.dataset.type = "occupied";
+            } else if (comfort.includes(index)) {
+                img.src = "Images/comfort.svg";
+                seat.dataset.type = "comfort";
+            } else {
+                img.src = "Images/Usual_place.svg";
+                seat.dataset.type = "usual";
+            }
+
+            img.className = "seat-svg";
+            seat.appendChild(img);
+
+            // Добавляем номер места
+            // В JavaScript измените создание номера места:
+            const seatNumber = document.createElement("div");
+            seatNumber.className = "seat-number";
+            // Нумерация от центра: 1-7 слева и 1-7 справа
+            if (c <= 7) {
+                seatNumber.textContent = 15 - c; // Слева: 14,13,12,11,10,9,8
+            } else {
+                seatNumber.textContent = 15 - c; // Справа: 7,6,5,4,3,2,1
+            }
+            seat.appendChild(seatNumber);
+
+            seat.addEventListener("click", () => {
+                if (seat.dataset.type === "occupied") return;
+
+                if (seat.classList.contains("selected")) {
+                    seat.classList.remove("selected");
+                    // Возвращаем исходную иконку в зависимости от типа места
+                    if (seat.dataset.type === "comfort") {
+                        img.src = "Images/comfort.svg";
+                    } else if (seat.dataset.type === "usual") {
+                        img.src = "Images/Usual_place.svg";
+                    }
+                    selected = selected.filter(x => x !== index);
+                } else {
+                    seat.classList.add("selected");
+                    img.src = "Images/Selected.svg";
+                    selected.push(index);
+                }
+                
+                // Обновляем информацию о выбранных местах
+                updateSelectionInfo();
+            });
+
+            seats.appendChild(seat);
+        }
+    }
+    
+    function updateSelectionInfo() {
+        console.log("Выбранные места:", selected);
+        // Здесь можно добавить логику для отображения выбранных мест и суммы
+    }
+});
+</script>
+
+</body>
+</html>
